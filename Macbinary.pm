@@ -2,7 +2,7 @@ package Mac::Macbinary;
 
 use strict;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 use Carp;
 
@@ -120,7 +120,7 @@ Following methods are available.
 
 =over 4
 
-=item new(I<THINGY>)
+=item new( THINGY )
 
 Constructor of Mac::Macbinary. Accepts filhandle GLOB reference,
 FileHandle instance, IO::* instance, or whatever objects that can do
@@ -200,7 +200,7 @@ Macbinary format via forms. You can decode them in a following way:
   $type = $q->uploadInfo($filename)->{'Content-Type'};
  
   if ($type eq 'application/x-macbinary') {
-      $mb = Mac::Macbinary->new($q->upload('uploaded_file');
+      $mb = Mac::Macbinary->new($q->upload('uploaded_file'));
       # now, you can get data via $mb->data;
   } 
 
@@ -218,14 +218,14 @@ Tatsuhiko Miyagawa <miyagawa@bulknews.net>
 
 Macbinary.pm is originally written by Dan Kogai <dankogai@dan.co.jp>.
 
-There are also C<Mac::Conversions> and C<Convert::BinHex>, which works
+There are also C<Mac::Conversions> and C<Convert::BinHex>, working
 kind similar to this module. (However, C<Mac::Conversions> works only
 on MacPerl, and C<Convert::BinHex> is now deprecated.) Many thanks to
 Paul J. Schinder and Eryq, authors of those ones.
 
 =head1 SEE ALSO
 
-perl(1).
+perl(1), L<Mac::Conversions>, L<Convert::BinHex>.
 
 =cut
 
