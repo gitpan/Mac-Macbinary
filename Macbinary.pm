@@ -2,7 +2,7 @@ package Mac::Macbinary;
 
 use strict;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.04';
+$VERSION = 0.05;
 
 use Carp ();
 
@@ -26,6 +26,9 @@ sub _parse_handle {
 	validate => $self->{validate},
     });
     read $fh, $self->{data}, $self->header->dflen;
+
+    my $resourceoffset = 128 - (($self->header->dflen) % 128);
+    read $fh, my($tmp), $resourceoffset;
     read $fh, $self->{resource}, $self->header->rflen;
 
     return $self;
@@ -196,7 +199,7 @@ C<new()> throws an exception "Can't read blahblah" if the given
 argument to the constructor is neither a valid filehandle nor an
 existing file.
 
-The optional "\%attr" parameter can be used for validation of file
+The optional L<\%attr> parameter can be used for validation of file
 format.  You can check and see if a file is really a Macbinary or not
 by setting "validate" attribute to 1.
 

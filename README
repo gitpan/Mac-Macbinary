@@ -24,7 +24,6 @@ METHODS
     Following methods are available.
 
   Class method
-
     new( THINGY, [ \%attr ] )
         Constructor of Mac::Macbinary. Accepts filhandle GLOB reference,
         FileHandle instance, IO::* instance, or whatever objects that can do
@@ -48,7 +47,7 @@ METHODS
         argument to the constructor is neither a valid filehandle nor an
         existing file.
 
-        The optional "\%attr" parameter can be used for validation of file
+        The optional \%attr parameter can be used for validation of file
         format. You can check and see if a file is really a Macbinary or not
         by setting "validate" attribute to 1.
 
@@ -63,7 +62,6 @@ METHODS
           }
 
   Instance Method
-
     data
         returns the data range of original file.
 
@@ -125,5 +123,5 @@ ACKNOWLEDGEMENT
     Mac::Conversions.
 
 SEE ALSO
-    perl(1), the Mac::Conversions manpage, the Convert::BinHex manpage.
+    perl(1), Mac::Conversions, Convert::BinHex.
 
