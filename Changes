@@ -1,6 +1,9 @@
 Revision history for Perl extension Mac::Macbinary.
 
-$Id: Changes,v 1.6 2003/10/20 21:04:10 miyagawa Exp $
+$Id: Changes,v 1.7 2004/07/02 08:25:02 miyagawa Exp $
+
+0.06	- Fixed warning using IO::Scalar
+	  (Thanks to Volker Moell)
 
 0.05	* Fixed bug in extracting resource fork
 	  (Thanks to Jorg Eschke <joerg@eschke.net>)
